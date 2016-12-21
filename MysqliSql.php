@@ -26,7 +26,7 @@ foreach ($links as $value) {
 foreach ($tmp as $obj) {
     $sql_result = $obj->reap_async_query();
     if (is_object($sql_result)) {
-        $sql_result_array = $sql_result->fetch_all(MYSQLI_ASSOC);//只有一行
+        $sql_result_array = $sql_result->fetch_all(MYSQLI_ASSOC);//
         $sql_result->free();
         var_dump($sql_result_array);
         // $hash = spl_object_hash($obj);
