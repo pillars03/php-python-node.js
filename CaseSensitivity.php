@@ -1,5 +1,5 @@
 <?php
-$filename="E:/fengshen/res";
+$filename="E:/ceshi/res";
 $fileArr=scandir($filename);
 $jsonArr=array();
 foreach($fileArr as $value){
