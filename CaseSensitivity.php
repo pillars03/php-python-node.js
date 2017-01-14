@@ -1,7 +1,16 @@
 <?php
-$filename="E:/ceshi/res";
+$filename='E:/ceshi/res';
 $fileArr=scandir($filename);
 $jsonArr=array();
+
+//扫描文件名大小写
+foreach($fileArr as $item){
+    if($item!=strtolower($item)){
+        var_dump($item);
+    }
+}
+exit();
+//扫描json中的大小写
 foreach($fileArr as $value){
     if(stripos($value,'.json')!==FALSE){
         $jsonArr[]=$value;
@@ -20,6 +29,7 @@ foreach ($jsonArr as $key => $value) {
 function checkCase($obj){
     foreach ($obj as $value) {
         if(isset($value['Children'])){
+            //递归
             checkCase($value['Children']);
         }else{
             if(isset($value['FileData']['Plist'])){
