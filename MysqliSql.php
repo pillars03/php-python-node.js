@@ -8,7 +8,7 @@ $database   = '';
 $time_start=microtime(true);
 $result = array('1'=>0,'1'=>0,'1'=>0);
  
-//异步方式[并发请求]
+//异步
 foreach ($result as $key=>$value) {
     $obj = new mysqli($host, $user, $password, $database);
     $links[spl_object_hash($obj)] = array('value'=>$key, 'link'=>$obj);
