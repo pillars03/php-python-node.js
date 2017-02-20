@@ -1,7 +1,7 @@
 var http = require('https');			// http 网路
 var cheerio = require('cheerio');	// html 解析
 var fs = require("fs");				// 流
-var queryHref = "https://www.zhihu.com/question/31996563"; 	// 设置被查询的目标网址
+var queryHref = "https://www.zhihu.com/question/30941719"; 	// 设置被查询的目标网址
 var urls = [];
 
 
@@ -29,7 +29,8 @@ function getPic(href, serach) {
 
 function downImg(imgurl) {
     // 做一步优化，如果存在文件，则不下载
-    var filename = "./upload/topic1/" + imgurl;
+    var index = imgurl.lastIndexOf("\/");
+    var filename = "./upload/topic1/" + imgurl.substring(index + 1, imgurl.length);
     fs.exists(filename, function (b) {
         if (!b) {
             // 文件不存则进行 下载
@@ -43,7 +44,7 @@ function downImg(imgurl) {
                 });
 
                 res.on("end", function () {
-                    var savePath = "./upload/topic1/" + new Date().getTime()+'.jpg';
+                    var savePath = filename;
                     console.log(savePath);
                     fs.writeFile(savePath, imgData, "binary", function (err) {
                         if (err) {
