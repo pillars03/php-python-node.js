@@ -18,5 +18,5 @@
 ## TraversalDir.php
 * 递归遍历文件夹和文件
 
-## Rename.py
-* py批量改名
+## nodespider.js
+* node.js实现的一个知乎图片爬虫，你需要自行创建目录
