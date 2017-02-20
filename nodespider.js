@@ -1,7 +1,7 @@
 var http = require('https');			// http 网路
 var cheerio = require('cheerio');	// html 解析
 var fs = require("fs");				// 流
-var queryHref = "https://www.zhihu.com/question/30941719"; 	// 设置被查询的目标网址
+var queryHref = "https://www.zhihu.com/question/29279000"; 	// 设置被查询的目标网址
 var urls = [];
 
 
@@ -53,6 +53,8 @@ function downImg(imgurl) {
                             console.log(imgurl);
                             if (urls.length > 0) {
                                 downImg(urls.shift());
+                            } else {
+                                console.log("下载完毕");
                             }
                         }
                     });
@@ -64,9 +66,6 @@ function downImg(imgurl) {
             }
         }
     });
-    if (urls.length <= 0) {
-        console.log("下载完毕");
-    }
 }
 
 getPic();
