@@ -1,7 +1,7 @@
 var http = require('https');			// http 网路
 var cheerio = require('cheerio');	// html 解析
 var fs = require("fs");				// 流
-var queryHref = "https://www.zhihu.com/question/29279000"; 	// 设置被查询的目标网址
+var queryHref = "https://www.zhihu.com/question/24214727"; 	// 设置被查询的目标网址
 var urls = [];
 
 
