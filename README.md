@@ -9,9 +9,6 @@
 ## Louti.js   Louti.py
 * 一步两步三步上楼梯问题
 
-## MaxTest.php
-* 一行代码解决最大值
-
 ## MysqliSql.php
 * 异步mysql查询
 
